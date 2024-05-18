@@ -110,7 +110,6 @@ body {
 #sidebar .side-menu li.active {
   background: var(--grey);
   position: relative;
-  /* color: var(--blue); */
 }
 
 #sidebar .side-menu li.active::before {
@@ -118,7 +117,6 @@ body {
   position: absolute;
   width: 40px;
   height: 40px;
-  /* background: var(--blue); */
   border-radius: 50%;
   top: -40px;
   right: 0;
