@@ -144,7 +144,7 @@
                     <tbody>
                         <tr>
                             <td> 1 </td>
-                            <td> <img src="/page/images/Zinzu Chan Lee.jpg" alt="">Maulana Yusuf</td>
+                            <td> <img src="/page/images/smile.jpeg" alt="">Maulana Yusuf</td>
                             <td> XII TKJ 2 </td>
                             <td> 79 </td>
                             <td>
@@ -157,7 +157,7 @@
                         </tr>
                         <tr>
                             <td> 2 </td>
-                            <td><img src="/page/images/Jeet Saru.png" alt=""> Ibrahim Sautani </td>
+                            <td><img src="/page/images/smile.jpeg" alt=""> Ibrahim Sautani </td>
                             <td> XII TKJ 2 </td>
                             <td> 67 </td>
                             <td>
@@ -170,11 +170,11 @@
                         </tr>
                         <tr>
                             <td> 3</td>
-                            <td><img src="/page/images/Sonal Gharti.jpg" alt=""> Sonal Gharti </td>
+                            <td><img src="/page/images/smile.jpeg" alt=""> Sonal Gharti </td>
                             <td> Tokyo </td>
                             <td> 14 Mar, 2023 </td>
                             <td>
-                                <p class="status shipped">Shipped</p>
+                                <p class="status belum-tuntas">belum tuntas</p>
                             </td>
                                                         <td>
                                 <a href="#">Edit |</a>
@@ -183,7 +183,7 @@
                         </tr>
                         <tr>
                             <td> 4</td>
-                            <td><img src="/page/images/Alson GC.jpg" alt=""> Alson GC </td>
+                            <td><img src="/page/images/smile.jpeg" alt=""> Alson GC </td>
                             <td> New Delhi </td>
                             <td> 25 May, 2023 </td>
                             <td>
@@ -196,11 +196,11 @@
                         </tr>
                         <tr>
                             <td> 5</td>
-                            <td><img src="/page/images/Sarita Limbu.jpg" alt=""> Sarita Limbu </td>
+                            <td><img src="/page/images/smile.jpeg" alt=""> Sarita Limbu </td>
                             <td> Paris </td>
                             <td> 23 Apr, 2023 </td>
                             <td>
-                                <p class="status pending">Pending</p>
+                                <p class="status tuntas">Pending</p>
                             </td>
                                                         <td>
                                 <a href="#">Edit |</a>
@@ -209,7 +209,7 @@
                         </tr>
                         <tr>
                             <td> 6</td>
-                            <td><img src="/page/images/Alex Gonley.jpg" alt=""> Alex Gonley </td>
+                            <td><img src="/page/images/smile.jpeg" alt=""> Alex Gonley </td>
                             <td> London </td>
                             <td> 23 Apr, 2023 </td>
                             <td>
@@ -222,7 +222,7 @@
                         </tr>
                         <tr>
                             <td> 7</td>
-                            <td><img src="/page/images/Alson GC.jpg" alt=""> Jeet Saru </td>
+                            <td><img src="/page/images/smile.jpeg" alt=""> Jeet Saru </td>
                             <td> New York </td>
                             <td> 20 May, 2023 </td>
                             <td>
@@ -233,26 +233,7 @@
                                 <a href="#">Hapus</a>
                             </td>
                         </tr>
-                        <tr>
-                            <td> 8</td>
-                            <td><img src="/page/images/Sarita Limbu.jpg" alt=""> Aayat Ali Khan </td>
-                            <td> Islamabad </td>
-                            <td> 30 Feb, 2023 </td>
-                            <td>
-                                <p class="status pending">Pending</p>
-                            </td>
-                            <td> <strong>$149.70</strong> </td>
-                        </tr>
-                        <tr>
-                            <td> 9</td>
-                            <td><img src="/page/images/Alex Gonley.jpg" alt=""> Alson GC </td>
-                            <td> Dhaka </td>
-                            <td> 22 Dec, 2023 </td>
-                            <td>
-                                <p class="status belum-tuntas">belum tuntas</p>
-                            </td>
-                            <td> <strong>$249.99</strong> </td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </section>
@@ -281,44 +262,7 @@ function searchTable() {
         visible_row.style.backgroundColor = (i % 2 == 0) ? 'transparent' : '#0000000b';
     });
 }
-
-// 2. Sorting | Ordering data of HTML table
-
-table_headings.forEach((head, i) => {
-    let sort_asc = true;
-    head.onclick = () => {
-        table_headings.forEach(head => head.classList.remove('active'));
-        head.classList.add('active');
-
-        document.querySelectorAll('td').forEach(td => td.classList.remove('active'));
-        table_rows.forEach(row => {
-            row.querySelectorAll('td')[i].classList.add('active');
-        })
-
-        head.classList.toggle('asc', sort_asc);
-        sort_asc = head.classList.contains('asc') ? false : true;
-
-        sortTable(i, sort_asc);
-    }
-})
-
-
-function sortTable(column, sort_asc) {
-    [...table_rows].sort((a, b) => {
-        let first_row = a.querySelectorAll('td')[column].textContent.toLowerCase(),
-            second_row = b.querySelectorAll('td')[column].textContent.toLowerCase();
-
-        return sort_asc ? (first_row < second_row ? 1 : -1) : (first_row < second_row ? -1 : 1);
-    })
-        .map(sorted_row => document.querySelector('tbody').appendChild(sorted_row));
-}
-
-
-
         </script>
-
-        <!--  -->
-
         <!-- --------------------------------------- -->
 
       <!-- main end -->

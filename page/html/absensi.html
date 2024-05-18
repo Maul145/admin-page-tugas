@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- style CSS -->
-    <link rel="stylesheet" href="/page/style/input.css" />
+    <link rel="stylesheet" href="/page/style/absensi.css" />
     <!-- boxicon -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -118,6 +118,146 @@
             </ul>
           </div>
         </div>
+
+        <!-- *-----------------------*---------------------* -->
+
+        <main class="table" id="customers_table">
+          <section class="table__header">
+              <h1>Daftar Hadir</h1>
+              <div class="input-group">
+                  <input type="search" placeholder="Search Data...">
+                  <img src="/page/images/search.png" alt="">
+              </div>
+          </section>
+          <section class="table__body">
+              <table>
+                  <thead>
+                      <tr>
+                          <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                          <th> Nama Siswa <span class="icon-arrow">&UpArrow;</span></th>
+                          <th> Kelas <span class="icon-arrow">&UpArrow;</span></th>
+                          <th> Tanggal <span class="icon-arrow">&UpArrow;</span></th>
+                          <th> Status <span class="icon-arrow">&UpArrow;</span></th>
+                          <th> Keterangan <span class="icon-arrow">&UpArrow;</span></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td> 1 </td>
+                          <td> <img src="/page/images/smile.jpeg" alt="">Maulana Yusuf</td>
+                          <td> XII TKJ 2 </td>
+                          <td>07.45 12 mei 2024</td>
+                          <td>
+                              <p class="status hadir">Hadir</p>
+                          </td>
+                          <td>
+                              <p>-</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td> 2 </td>
+                          <td><img src="/page/images/smile.jpeg" alt=""> Ibrahim Sautani </td>
+                          <td> XII TKJ 2 </td>
+                          <td>-</td>
+                          <td>
+                              <p class="status tidak-hadir">Tidak Hadir</p>
+                          </td>
+                          <td>
+                              <p>tanpa keterangan</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td> 3</td>
+                          <td><img src="/page/images/smile.jpeg" alt=""> Sonal Gharti </td>
+                          <td>XII TKJ 1</td>
+                          <td>-</td>
+                          <td>
+                              <p class="status izin">Izin</p>
+                          </td>
+                          <td>
+                              <p>Kegiatan Pramuka</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td> 4</td>
+                          <td><img src="/page/images/smile.jpeg" alt=""> Alson GC </td>
+                          <td>XII TKJ 2</td>
+                          <td>-</td>
+                          <td>
+                              <p class="status sakit">Sakit</p>
+                          </td>
+                          <td>
+                              <p>Tipes</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td> 5</td>
+                          <td><img src="/page/images/smile.jpeg" alt=""> Sarita Limbu </td>
+                          <td>XII TKJ 1</td>
+                          <td>07.25 12 mei 2024</td>
+                          <td>
+                              <p class="status hadir">Hadir</p>
+                          </td>
+                          <td>
+                              <p>-</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td> 6</td>
+                          <td><img src="/page/images/smile.jpeg" alt=""> Alex Gonley </td>
+                          <td>XII TKJ 1</td>
+                          <td>-</td>
+                          <td>
+                              <p class="status izin">Izin</p>
+                          </td>
+                          <td>
+                              <p>Ekskul Voly</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td> 7</td>
+                          <td><img src="/page/images/smile.jpeg" alt=""> Jeet Saru </td>
+                          <td>XII TKJ 2</td>
+                          <td>-</td>
+                          <td>
+                              <p class="status izin">izin</p>
+                          </td>
+                          <td>
+                              <p>pulang kampung</p>
+                          </td>
+                      </tr>
+                      
+                  </tbody>
+              </table>
+          </section>
+      </main>
+
+      <!-- scripts -->
+
+      <script>
+          const search = document.querySelector('.input-group input'),
+  table_rows = document.querySelectorAll('tbody tr'),
+  table_headings = document.querySelectorAll('thead th');
+
+// 1. Searching for specific data of HTML table
+search.addEventListener('input', searchTable);
+
+function searchTable() {
+  table_rows.forEach((row, i) => {
+      let table_data = row.textContent.toLowerCase(),
+          search_data = search.value.toLowerCase();
+
+      row.classList.toggle('hide', table_data.indexOf(search_data) < 0);
+      row.style.setProperty('--delay', i / 25 + 's');
+  })
+
+  document.querySelectorAll('tbody tr:not(.hide)').forEach((visible_row, i) => {
+      visible_row.style.backgroundColor = (i % 2 == 0) ? 'transparent' : '#0000000b';
+  });
+}
+      </script>
+
+        <!-- *-----------------------*---------------------* -->
 
       <!-- main end -->
     </section>
