@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- style CSS -->
-    <link rel="stylesheet" href="/page/style/input.css" />
+    <link rel="stylesheet" href="/page/style/terima-aduan.css" />
     <!-- boxicon -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -113,7 +113,7 @@
               </li>
               <li><i class="bx bx-chevron-right"></i></li>
               <li>
-                <a class="active" href="#">home</a>
+                <a class="active" href="#">Aduan Siswa</a>
               </li>
             </ul>
           </div>
@@ -122,11 +122,136 @@
         
 
       <!-- main end -->
-    </section>
 
-    <!-- content end -->
+      <!-- ************************ -->
 
-    <!-- JavaScript -->
-    <script src="/script.js"></script>
+      <main class="table" id="customers_table">
+        <section class="table__header">
+            <h1>Daftar Aduan</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="/page/images/search.png" alt="">
+            </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> No </th>
+                        <th> Nama </th>
+                        <th> Status </th>
+                        <th> Aduan </th>
+                        <th> Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 1 </td>
+                         <td>Maulana Yusuf Zn.</td>
+                        <td>Siswa</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolor nihil cupiditate ipsa totam architecto.</td>
+                        <td>
+                          <a href="#">Edit</a>
+                          <a href="#">Hapus</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 2 </td>
+                        <td>Maulana Yusuf Zn.</td>
+                        <td>Siswa</td>
+                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, impedit ea. Voluptate unde placeat voluptas?</td>
+                        <td>
+                          <a href="#">Edit</a>
+                          <a href="#">Hapus</a>
+                      </td>
+                    </tr>
+                    <tr>
+                        <td> 3</td>
+                        <td>Maulana Yusuf Zn.</td>
+                        <td>Masyarakat</td>
+                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, impedit ea. Voluptate unde placeat voluptas?</td>
+                        <td>
+                          <a href="#">Edit</a>
+                          <a href="#">Hapus</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 4</td>
+                        <td>Maulana Yusuf Zn.</td>
+                        <td>Siswa</td>
+                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, impedit ea. Voluptate unde placeat voluptas?</td>
+                        <td>
+                          <a href="#">Edit</a>
+                          <a href="#">Hapus</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 5</td>
+                        <td>Maulana Yusuf Zn.</td>
+                        <td>Masyarakat</td>
+                        <td>07.25 12 mei 2024</td>
+                        <td>
+                                <a href="#">Edit |</a>
+                                <a href="#">Hapus</a>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td> 6</td>
+                        <td>Maulana Yusuf Zn.</td>
+                        <td>Masyarakat</td>
+                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, impedit ea. Voluptate unde placeat voluptas?</td>
+                        <td>
+                          <a href="#">Edit</a>
+                          <a href="#">Hapus</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> 7</td>
+                        <td>Maulana Yusuf Zn.</td>
+                        <td>XII TKJ 2</td>
+                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, impedit ea. Voluptate unde placeat voluptas?</td>
+                        <td>
+                          <a href="#">Edit</a>
+                          <a href="#">Hapus</a>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+  </section>
+  
+  <!-- content end -->
+  <!-- JavaScript -->
+  <!-- scripts -->
+
+  <script>
+    const search = document.querySelector('.input-group input'),
+table_rows = document.querySelectorAll('tbody tr'),
+table_headings = document.querySelectorAll('thead th');
+
+// 1. Searching for specific data of HTML table
+search.addEventListener('input', searchTable);
+
+function searchTable() {
+table_rows.forEach((row, i) => {
+let table_data = row.textContent.toLowerCase(),
+    search_data = search.value.toLowerCase();
+
+row.classList.toggle('hide', table_data.indexOf(search_data) < 0);
+row.style.setProperty('--delay', i / 25 + 's');
+})
+
+document.querySelectorAll('tbody tr:not(.hide)').forEach((visible_row, i) => {
+visible_row.style.backgroundColor = (i % 2 == 0) ? 'transparent' : '#0000000b';
+});
+}
+</script>
+
+  <!-- ************************ -->
+  <script src="/script.js"></script>
+  
   </body>
 </html>

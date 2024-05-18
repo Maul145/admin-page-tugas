@@ -384,7 +384,7 @@ body {
   .table,
   .table__body {
     overflow: visible;
-    height: auto !important;
+    height: auto !important; 
     width: auto !important;
   }
 }
