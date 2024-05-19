@@ -555,14 +555,6 @@ tbody tr.hide td img {
   color: #b30021;
 }
 
-/* .status.pending {
-     background-color: #ebc474;
- } */
-
-/* .status.shipped {
-     background-color: #6fcaea;
- } */
-
 @media (max-width: 1000px) {
   td:not(:first-of-type) {
     min-width: 12.1rem;
